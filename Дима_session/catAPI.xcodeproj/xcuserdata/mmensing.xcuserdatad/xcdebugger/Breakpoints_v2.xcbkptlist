@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "C737F90D-710C-446B-A930-FA484723C9D5"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CE4AB2A6-21AD-4329-9C79-8CA662D463BD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "temp/viewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "ViewModel"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D013CDC1-0017-4B91-9774-4868C7312FA3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "temp/viewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "catDTO"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "D013CDC1-0017-4B91-9774-4868C7312FA3 - ecdb2e7af380bf64"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "temp.ViewModel.catDTO.getter : Swift.Optional&lt;temp.CatFactDTO&gt;"
+                  moduleName = "temp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mmensing/Desktop/temp/temp/viewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "171">
+               </Location>
+               <Location
+                  uuid = "D013CDC1-0017-4B91-9774-4868C7312FA3 - a46f4cb28ac2c378"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "temp.ViewModel.catDTO.setter : Swift.Optional&lt;temp.CatFactDTO&gt;"
+                  moduleName = "temp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mmensing/Desktop/temp/temp/viewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "266">
+               </Location>
+               <Location
+                  uuid = "D013CDC1-0017-4B91-9774-4868C7312FA3 - 1434e2e9b8b515da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "temp.ViewModel.catDTO.modify : Swift.Optional&lt;temp.CatFactDTO&gt;"
+                  moduleName = "temp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mmensing/Desktop/temp/temp/viewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "22">
+               </Location>
+               <Location
+                  uuid = "D013CDC1-0017-4B91-9774-4868C7312FA3 - 2119439064a789c2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "temp.ViewModel.catDTO.modify : Swift.Optional&lt;temp.CatFactDTO&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "temp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mmensing/Desktop/temp/temp/viewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "10">
+               </Location>
+               <Location
+                  uuid = "D013CDC1-0017-4B91-9774-4868C7312FA3 - 689b83760480b8b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "temp.ViewModel.init() -&gt; temp.ViewModel"
+                  moduleName = "temp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mmensing/Desktop/temp/temp/viewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "237">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
