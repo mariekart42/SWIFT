@@ -13,6 +13,7 @@
 		597CA2A22AD863B800AE3D5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597CA2A12AD863B800AE3D5E /* ContentView.swift */; };
 		597CA2A42AD863BA00AE3D5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 597CA2A32AD863BA00AE3D5E /* Assets.xcassets */; };
 		597CA2A72AD863BA00AE3D5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 597CA2A62AD863BA00AE3D5E /* Preview Assets.xcassets */; };
+		59EC6F122AD9509E00FCED37 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EC6F112AD9509E00FCED37 /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		597CA2A32AD863BA00AE3D5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		597CA2A62AD863BA00AE3D5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		597CA2A82AD863BA00AE3D5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59EC6F112AD9509E00FCED37 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +42,7 @@
 		597CA2932AD863B700AE3D5E = {
 			isa = PBXGroup;
 			children = (
+				59EC6F112AD9509E00FCED37 /* File.swift */,
 				597CA29E2AD863B800AE3D5E /* temp */,
 				597CA29D2AD863B800AE3D5E /* Products */,
 			);
@@ -109,7 +112,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 597CA2972AD863B800AE3D5E /* Build configuration list for PBXProject "temp" */;
+			buildConfigurationList = 597CA2972AD863B800AE3D5E /* Build configuration list for PBXProject "catAPI" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59EC6F122AD9509E00FCED37 /* File.swift in Sources */,
 				597CA2A22AD863B800AE3D5E /* ContentView.swift in Sources */,
 				59521B232AD871D00081E9FB /* viewModel.swift in Sources */,
 				597CA2A02AD863B800AE3D5E /* tempApp.swift in Sources */,
@@ -317,7 +321,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		597CA2972AD863B800AE3D5E /* Build configuration list for PBXProject "temp" */ = {
+		597CA2972AD863B800AE3D5E /* Build configuration list for PBXProject "catAPI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				597CA2A92AD863BA00AE3D5E /* Debug */,
