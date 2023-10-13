@@ -1,10 +1,3 @@
-//
-//  tempApp.swift
-//  temp
-//
-//  Created by Marie Mensing on 10/12/23.
-//
-
 import SwiftUI
 
 @main

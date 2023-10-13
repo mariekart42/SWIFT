@@ -1,10 +1,3 @@
-//
-//  viewModel.swift
-//  temp
-//
-//  Created by Marie Mensing on 10/12/23.
-//
-
 import Foundation
 import SwiftUI
 
@@ -18,4 +11,3 @@ class ViewModel : ObservableObject {
         }
     }
 }
-

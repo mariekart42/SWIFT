@@ -7,29 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		59521B232AD871D00081E9FB /* viewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59521B222AD871D00081E9FB /* viewModel.swift */; };
-		59521B262AD8740A0081E9FB /* viewModel+didPressed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59521B252AD8740A0081E9FB /* viewModel+didPressed.swift */; };
-		597CA2A02AD863B800AE3D5E /* tempApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597CA29F2AD863B800AE3D5E /* tempApp.swift */; };
-		597CA2A22AD863B800AE3D5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597CA2A12AD863B800AE3D5E /* ContentView.swift */; };
-		597CA2A42AD863BA00AE3D5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 597CA2A32AD863BA00AE3D5E /* Assets.xcassets */; };
-		597CA2A72AD863BA00AE3D5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 597CA2A62AD863BA00AE3D5E /* Preview Assets.xcassets */; };
-		59EC6F122AD9509E00FCED37 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EC6F112AD9509E00FCED37 /* File.swift */; };
+		59A8EEB62AD9B3010029E44A /* freitag_der_13App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A8EEB52AD9B3010029E44A /* freitag_der_13App.swift */; };
+		59A8EEB82AD9B3010029E44A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A8EEB72AD9B3010029E44A /* ContentView.swift */; };
+		59A8EEBA2AD9B3030029E44A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59A8EEB92AD9B3030029E44A /* Assets.xcassets */; };
+		59A8EEBD2AD9B3030029E44A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59A8EEBC2AD9B3030029E44A /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		59521B222AD871D00081E9FB /* viewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewModel.swift; sourceTree = "<group>"; };
-		59521B252AD8740A0081E9FB /* viewModel+didPressed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "viewModel+didPressed.swift"; sourceTree = "<group>"; };
-		597CA29C2AD863B800AE3D5E /* temp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = temp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		597CA29F2AD863B800AE3D5E /* tempApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempApp.swift; sourceTree = "<group>"; };
-		597CA2A12AD863B800AE3D5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		597CA2A32AD863BA00AE3D5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		597CA2A62AD863BA00AE3D5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		597CA2A82AD863BA00AE3D5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		59EC6F112AD9509E00FCED37 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		59A8EEB22AD9B3010029E44A /* freitag_der_13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = freitag_der_13.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		59A8EEB52AD9B3010029E44A /* freitag_der_13App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = freitag_der_13App.swift; sourceTree = "<group>"; };
+		59A8EEB72AD9B3010029E44A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		59A8EEB92AD9B3030029E44A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		59A8EEBC2AD9B3030029E44A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		59A8EEBE2AD9B3030029E44A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		597CA2992AD863B800AE3D5E /* Frameworks */ = {
+		59A8EEAF2AD9B3010029E44A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,41 +33,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		597CA2932AD863B700AE3D5E = {
+		59A8EEA92AD9B3010029E44A = {
 			isa = PBXGroup;
 			children = (
-				59EC6F112AD9509E00FCED37 /* File.swift */,
-				597CA29E2AD863B800AE3D5E /* temp */,
-				597CA29D2AD863B800AE3D5E /* Products */,
+				59A8EEB42AD9B3010029E44A /* freitag_der_13 */,
+				59A8EEB32AD9B3010029E44A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		597CA29D2AD863B800AE3D5E /* Products */ = {
+		59A8EEB32AD9B3010029E44A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				597CA29C2AD863B800AE3D5E /* temp.app */,
+				59A8EEB22AD9B3010029E44A /* freitag_der_13.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		597CA29E2AD863B800AE3D5E /* temp */ = {
+		59A8EEB42AD9B3010029E44A /* freitag_der_13 */ = {
 			isa = PBXGroup;
 			children = (
-				597CA29F2AD863B800AE3D5E /* tempApp.swift */,
-				597CA2A12AD863B800AE3D5E /* ContentView.swift */,
-				59521B222AD871D00081E9FB /* viewModel.swift */,
-				59521B252AD8740A0081E9FB /* viewModel+didPressed.swift */,
-				597CA2A32AD863BA00AE3D5E /* Assets.xcassets */,
-				597CA2A82AD863BA00AE3D5E /* Info.plist */,
-				597CA2A52AD863BA00AE3D5E /* Preview Content */,
+				59A8EEB52AD9B3010029E44A /* freitag_der_13App.swift */,
+				59A8EEB72AD9B3010029E44A /* ContentView.swift */,
+				59A8EEB92AD9B3030029E44A /* Assets.xcassets */,
+				59A8EEBE2AD9B3030029E44A /* Info.plist */,
+				59A8EEBB2AD9B3030029E44A /* Preview Content */,
 			);
-			path = temp;
+			path = freitag_der_13;
 			sourceTree = "<group>";
 		};
-		597CA2A52AD863BA00AE3D5E /* Preview Content */ = {
+		59A8EEBB2AD9B3030029E44A /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				597CA2A62AD863BA00AE3D5E /* Preview Assets.xcassets */,
+				59A8EEBC2AD9B3030029E44A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -81,38 +72,38 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		597CA29B2AD863B800AE3D5E /* temp */ = {
+		59A8EEB12AD9B3010029E44A /* freitag_der_13 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 597CA2AB2AD863BA00AE3D5E /* Build configuration list for PBXNativeTarget "temp" */;
+			buildConfigurationList = 59A8EEC12AD9B3030029E44A /* Build configuration list for PBXNativeTarget "freitag_der_13" */;
 			buildPhases = (
-				597CA2982AD863B800AE3D5E /* Sources */,
-				597CA2992AD863B800AE3D5E /* Frameworks */,
-				597CA29A2AD863B800AE3D5E /* Resources */,
+				59A8EEAE2AD9B3010029E44A /* Sources */,
+				59A8EEAF2AD9B3010029E44A /* Frameworks */,
+				59A8EEB02AD9B3010029E44A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = temp;
-			productName = temp;
-			productReference = 597CA29C2AD863B800AE3D5E /* temp.app */;
+			name = freitag_der_13;
+			productName = freitag_der_13;
+			productReference = 59A8EEB22AD9B3010029E44A /* freitag_der_13.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		597CA2942AD863B700AE3D5E /* Project object */ = {
+		59A8EEAA2AD9B3010029E44A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
-					597CA29B2AD863B800AE3D5E = {
+					59A8EEB12AD9B3010029E44A = {
 						CreatedOnToolsVersion = 12.4;
 					};
 				};
 			};
-			buildConfigurationList = 597CA2972AD863B800AE3D5E /* Build configuration list for PBXProject "catAPI" */;
+			buildConfigurationList = 59A8EEAD2AD9B3010029E44A /* Build configuration list for PBXProject "freitag_der_13" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -120,45 +111,42 @@
 				en,
 				Base,
 			);
-			mainGroup = 597CA2932AD863B700AE3D5E;
-			productRefGroup = 597CA29D2AD863B800AE3D5E /* Products */;
+			mainGroup = 59A8EEA92AD9B3010029E44A;
+			productRefGroup = 59A8EEB32AD9B3010029E44A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				597CA29B2AD863B800AE3D5E /* temp */,
+				59A8EEB12AD9B3010029E44A /* freitag_der_13 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		597CA29A2AD863B800AE3D5E /* Resources */ = {
+		59A8EEB02AD9B3010029E44A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				597CA2A72AD863BA00AE3D5E /* Preview Assets.xcassets in Resources */,
-				597CA2A42AD863BA00AE3D5E /* Assets.xcassets in Resources */,
+				59A8EEBD2AD9B3030029E44A /* Preview Assets.xcassets in Resources */,
+				59A8EEBA2AD9B3030029E44A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		597CA2982AD863B800AE3D5E /* Sources */ = {
+		59A8EEAE2AD9B3010029E44A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59EC6F122AD9509E00FCED37 /* File.swift in Sources */,
-				597CA2A22AD863B800AE3D5E /* ContentView.swift in Sources */,
-				59521B232AD871D00081E9FB /* viewModel.swift in Sources */,
-				597CA2A02AD863B800AE3D5E /* tempApp.swift in Sources */,
-				59521B262AD8740A0081E9FB /* viewModel+didPressed.swift in Sources */,
+				59A8EEB82AD9B3010029E44A /* ContentView.swift in Sources */,
+				59A8EEB62AD9B3010029E44A /* freitag_der_13App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		597CA2A92AD863BA00AE3D5E /* Debug */ = {
+		59A8EEBF2AD9B3030029E44A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -219,7 +207,7 @@
 			};
 			name = Debug;
 		};
-		597CA2AA2AD863BA00AE3D5E /* Release */ = {
+		59A8EEC02AD9B3030029E44A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -274,44 +262,44 @@
 			};
 			name = Release;
 		};
-		597CA2AC2AD863BA00AE3D5E /* Debug */ = {
+		59A8EEC22AD9B3030029E44A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"temp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"freitag_der_13/Preview Content\"";
 				DEVELOPMENT_TEAM = ZRJQTQ25MU;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = temp/Info.plist;
+				INFOPLIST_FILE = freitag_der_13/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ahhhhh.temp;
+				PRODUCT_BUNDLE_IDENTIFIER = "ahhhhh.freitag-der-13";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		597CA2AD2AD863BA00AE3D5E /* Release */ = {
+		59A8EEC32AD9B3030029E44A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"temp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"freitag_der_13/Preview Content\"";
 				DEVELOPMENT_TEAM = ZRJQTQ25MU;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = temp/Info.plist;
+				INFOPLIST_FILE = freitag_der_13/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ahhhhh.temp;
+				PRODUCT_BUNDLE_IDENTIFIER = "ahhhhh.freitag-der-13";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -321,25 +309,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		597CA2972AD863B800AE3D5E /* Build configuration list for PBXProject "catAPI" */ = {
+		59A8EEAD2AD9B3010029E44A /* Build configuration list for PBXProject "freitag_der_13" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				597CA2A92AD863BA00AE3D5E /* Debug */,
-				597CA2AA2AD863BA00AE3D5E /* Release */,
+				59A8EEBF2AD9B3030029E44A /* Debug */,
+				59A8EEC02AD9B3030029E44A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		597CA2AB2AD863BA00AE3D5E /* Build configuration list for PBXNativeTarget "temp" */ = {
+		59A8EEC12AD9B3030029E44A /* Build configuration list for PBXNativeTarget "freitag_der_13" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				597CA2AC2AD863BA00AE3D5E /* Debug */,
-				597CA2AD2AD863BA00AE3D5E /* Release */,
+				59A8EEC22AD9B3030029E44A /* Debug */,
+				59A8EEC32AD9B3030029E44A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 597CA2942AD863B700AE3D5E /* Project object */;
+	rootObject = 59A8EEAA2AD9B3010029E44A /* Project object */;
 }
