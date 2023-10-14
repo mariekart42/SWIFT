@@ -11,4 +11,4 @@
 - adjusting Spacer() and padding if number gets resized to smaller font if too big
 
 
-- state right now:![[Screen Shot 2023-10-14 at 9.11.17 PM.png]]
+- state right now:<img src="state_14.1-.2023" alt="Description" class="small-image">
