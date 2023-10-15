@@ -10,7 +10,7 @@ struct ContentViewEx01: View
     @State private var display = "0"
     @State private var scaleFactor: CGFloat = 1.0
     @State private var currentOperator: String? // means can be nil
-    @State var operationArray: [String]
+//    var operationArray: [String]
     
     var body: some View
     {
@@ -47,31 +47,37 @@ struct ContentViewEx01: View
                             roundNumberButton(currentRow: row, currentColumn: column, width: getWidth(proxy: proxy), myAction: {
                                 // action
                                 
+                                
+                                
                                 let cgFloatResult: CGFloat = myStoCGFloat(result: display)
                                 let stringButtonValue: String = getValueAt(row: row, column: column)
                                 let cgFloatButtonValue: CGFloat = myStoCGFloat(result: stringButtonValue)
 
-                                if (buttonIsNumber(value: cgFloatButtonValue)) {
-                                    if (currentOperator != nil) {
-                                        // we are d
-                                    }
-                                    if (cgFloatButtonValue == 0 && cgFloatResult == 0) {
-                                        print("i will do nothing lol")
-                                    } else if (cgFloatResult == 0) {
-                                        display = stringButtonValue
-                                        operationArray.removeAll()
-                                        operationArray.append(stringButtonValue)
-                                    } else {
-                                        display += stringButtonValue
-                                    }
-                                } else if (stringButtonValue == "AC") {
-                                    display = "0";
-                                    operationArray.removeAll()
-                                } else if (buttonIsOperator(value: stringButtonValue)) {
-                                    currentOperator = stringButtonValue
-                                } else {
-                                    print("not implemented yet")
-                                }
+//                                if (
+                                
+                                
+                                
+//                                if (buttonIsNumber(value: cgFloatButtonValue)) {
+//                                    if (currentOperator != nil) {
+//                                        // we are d
+//                                    }
+//                                    if (cgFloatButtonValue == 0 && cgFloatResult == 0) {
+//                                        print("i will do nothing lol")
+//                                    } else if (cgFloatResult == 0) {
+//                                        display = stringButtonValue
+//                                        operationArray.removeAll()
+//                                        operationArray.append(stringButtonValue)
+//                                    } else {
+//                                        display += stringButtonValue
+//                                    }
+//                                } else if (stringButtonValue == "AC") {
+//                                    display = "0";
+//                                    operationArray.removeAll()
+//                                } else if (buttonIsOperator(value: stringButtonValue)) {
+//                                    currentOperator = stringButtonValue
+//                                } else {
+//                                    print("not implemented yet")
+//                                }
                             })
                         }
                     }
