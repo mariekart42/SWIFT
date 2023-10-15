@@ -7,7 +7,7 @@ struct ContentViewEx01: View
     let columns = 4
     let spacing: CGFloat = 15
     
-    @State private var text = "999.999.9999"
+    @State private var result = "0"
     @State private var scaleFactor: CGFloat = 1.0
     
     var body: some View
@@ -18,7 +18,7 @@ struct ContentViewEx01: View
                 Spacer()
                 HStack
                 {
-                    Text(text)
+                    Text(result)
                         .font(Font.system(size: proxy.size.width/CGFloat(columns)).weight(.thin)) // Set the font size to 30 points
                         .minimumScaleFactor(0.6) // Adjust the minimum scale factor as needed
                         .lineLimit(1) // everything will be dispalyed on 0ne line
@@ -27,7 +27,7 @@ struct ContentViewEx01: View
                         .onAppear
                         {
                             // TODO: here add later, if text is too big, dont change previuse text(only for typing numbers, not calculating and displayin!)
-                            let textSize = text.size(withAttributes: [.font: UIFont.systemFont(ofSize: proxy.size.width / CGFloat(columns))])
+                            let textSize = result.size(withAttributes: [.font: UIFont.systemFont(ofSize: proxy.size.width / CGFloat(columns))])
                             scaleFactor = proxy.size.width / (CGFloat(columns) * textSize.width)
                             
                             if scaleFactor < 0.6 {
@@ -43,7 +43,25 @@ struct ContentViewEx01: View
                     {
                         ForEach(0..<Int(columns), id: \.self) { column in
                             roundNumberButton(currentRow: row, currentColumn: column, width: getWidth(proxy: proxy), myAction: {
-                                print("Row: \(row), Column: \(column)")
+                                // action
+//                                print("Row: \(row), Column: \(column)")
+                                
+                                var cgFloatResult: CGFloat = myStoCGFloat(result: result)
+                                var cgFloatButtonValue: CGFloat = myStoCGFloat(result: getValueAt(row: row, column: column))
+                                
+                                if (buttonIsNumber(value: cgFloatButtonValue))
+                                {
+                                    if (cgFloatButtonValue == 0 && cgFloatResult == 0) {
+                                        print("i will do nothing lol")
+                                    } else {
+                                        print("ITS A NUMBER")
+                                        result += getValueAt(row: row, column: column)
+                                    }
+                                }
+                                else
+                                {
+                                    print("ITS NOT A NUMBER")
+                                }
                             })
                         }
                     }
@@ -52,12 +70,29 @@ struct ContentViewEx01: View
         }.padding(spacing)// distance between screen edge and buttons
     }
 
+    func buttonIsNumber(value: CGFloat) -> Bool {
+        if (value >= 0 && value <= 9) {
+            return true // its a number
+        }
+        return false // if nil or not a number
+    }
+    
     func getWidth(proxy: GeometryProxy) -> CGFloat {
         let typecastColumns: CGFloat = CGFloat(columns)
         
         return (proxy.size.width/typecastColumns)-spacing*0.75
     }
+// end of struct
 }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -73,7 +108,7 @@ struct roundNumberButton: View
     {
         Button(action: myAction)
         {
-            Text(getTitle(currentRow: currentRow, currentColumn: currentColumn))
+            Text(getValueAt(row: currentRow, column: currentColumn))
                 .font(.largeTitle)
                 .fontWeight(.regular)
                 .frame(width: width)
@@ -83,95 +118,24 @@ struct roundNumberButton: View
                 .cornerRadius(width/2)
         }
     }
+}
     
-    func getTitle(currentRow: Int, currentColumn: Int) -> String {
-        switch currentRow {
-        case 0:
-            switch currentColumn {
-            case 0:
-                return "AC"
-            case 1:
-                return "💀" // dis +/- sign
-            case 2:
-                return "💀" // dis % sign
-            case 3:
-                return "÷"
-            default:
-                return "lol"
-            }
-        case 1:
-            switch currentColumn {
-            case 0:
-                return "7"
-            case 1:
-                return "8"
-            case 2:
-                return "9"
-            case 3:
-                return "×"
-            default:
-                return "lol"
-            }
-        case 2:
-            switch currentColumn {
-            case 0:
-                return "4"
-            case 1:
-                return "5"
-            case 2:
-                return "6"
-            case 3:
-                return "−"
-            default:
-                return "lol"
-            }
-        case 3:
-            switch currentColumn {
-            case 0:
-                return "1"
-            case 1:
-                return "2"
-            case 2:
-                return "3"
-            case 3:
-                return "+"
-            default:
-                return "lol"
-            }
-        case 4:
-            switch currentColumn {
-            case 0:
-                return "0"
-            case 1:
-                return "0"
-            case 2:
-                return ","
-            case 3:
-                return "="
-            default:
-                return "lol"
-            }
-        default:
-            return "lol"
-        }
+
+func getForegroundColor(currentRow: Int, currentColumn: Int) -> Color {
+    if (currentRow == 0 && currentColumn != 3) {
+        return .black
+    } else {
+        return .white
     }
-    
-    func getForegroundColor(currentRow: Int, currentColumn: Int) -> Color {
-        if (currentRow == 0 && currentColumn != 3) {
-            return .black
-        } else {
-            return .white
-        }
-    }
-    
-    func getBackgroundColor(currentRow: Int, currentColumn: Int) -> Color {
-        if (currentRow == 0 && currentColumn != 3) {
-            return Color(hex: "#b5b5b5") // light gray
-        } else if (currentColumn == 3) {
-            return Color(hex: "#fc9505") // orange
-        } else {
-            return Color(hex: "#333333") // dark gray
-        }
+}
+
+func getBackgroundColor(currentRow: Int, currentColumn: Int) -> Color {
+    if (currentRow == 0 && currentColumn != 3) {
+        return Color(hex: "#b5b5b5") // light gray
+    } else if (currentColumn == 3) {
+        return Color(hex: "#fc9505") // orange
+    } else {
+        return Color(hex: "#333333") // dark gray
     }
 }
 

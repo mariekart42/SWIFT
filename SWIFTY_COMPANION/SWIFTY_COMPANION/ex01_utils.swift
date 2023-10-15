@@ -25,3 +25,83 @@ extension Color {
         )
     }
 }
+
+func myStoCGFloat(result: String) -> CGFloat {
+    if let resultInFloat = Float(result) {
+        return CGFloat(resultInFloat)
+    }
+    return -1 // never checking for that lol
+}
+
+
+func getValueAt(row: Int, column: Int) -> String {
+    switch row {
+    case 0:
+        switch column {
+        case 0:
+            return "AC"
+        case 1:
+            return "💀" // dis +/- sign
+        case 2:
+            return "💀" // dis % sign
+        case 3:
+            return "÷"
+        default:
+            return "lol"
+        }
+    case 1:
+        switch column {
+        case 0:
+            return "7"
+        case 1:
+            return "8"
+        case 2:
+            return "9"
+        case 3:
+            return "×"
+        default:
+            return "lol"
+        }
+    case 2:
+        switch column {
+        case 0:
+            return "4"
+        case 1:
+            return "5"
+        case 2:
+            return "6"
+        case 3:
+            return "−"
+        default:
+            return "lol"
+        }
+    case 3:
+        switch column {
+        case 0:
+            return "1"
+        case 1:
+            return "2"
+        case 2:
+            return "3"
+        case 3:
+            return "+"
+        default:
+            return "lol"
+        }
+    case 4:
+        switch column {
+        case 0:
+            return "0"
+        case 1:
+            return "0"
+        case 2:
+            return ","
+        case 3:
+            return "="
+        default:
+            return "lol"
+        }
+    default:
+        return "lol"
+    }
+}
