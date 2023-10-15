@@ -26,12 +26,18 @@ extension Color {
     }
 }
 
-func myStoCGFloat(result: String) -> CGFloat {
-    if let resultInFloat = Float(result) {
+func myStoCGFloat(val: String) -> CGFloat {
+    if let resultInFloat = Float(val) {
         return CGFloat(resultInFloat)
     }
     return -1 // never checking for that lol
 }
+
+//func myCGFloattoS(val: CGFloat) -> String {
+//    let resultInString = String(describing: val)
+//        return resultInString
+////    return -1 // never checking for that lol
+//}
 
 
 func getValueAt(row: Int, column: Int) -> String {

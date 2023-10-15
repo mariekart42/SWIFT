@@ -59,7 +59,6 @@ struct ContentViewEx01: View
                                 ButtonInstance.row = row
                                 ButtonInstance.column = column
                                 initButtonValues(instance: ButtonInstance, pressedButton: getValueAt(row: row, column: column))
-                                print("After initButton: \(ButtonInstance.display)")
                                 realDisplay = ButtonInstance.display
                             })
                         }
@@ -87,6 +86,7 @@ func buttonIsNumber(value: CGFloat) -> Bool {
 }
 
 func buttonIsOperator(value: String) -> Bool {
+    
     if value == "÷" || value == "×" || value == "−" || value == "+" {
         return true
     }
@@ -148,7 +148,7 @@ func getBackgroundColor(currentRow: Int, currentColumn: Int) -> Color {
 func initButtonValues(instance: ButtonData, pressedButton: String) -> Void {
     print("lol: \(instance.row) | \(instance.column)")
     
-    let buttonValueCFFloat: CGFloat = myStoCGFloat(result: pressedButton)
+    let buttonValueCFFloat: CGFloat = myStoCGFloat(val: pressedButton)
     
     var tmpLeftHand: String = instance.leftHandValue ?? "0" // if leftHandValue is nil -> assigns it to "0"
     var tmpRightHand: String = instance.rightHandValue ?? "0" // if rightHandValue is nil -> assigns it to "0"
@@ -190,6 +190,14 @@ func initButtonValues(instance: ButtonData, pressedButton: String) -> Void {
                 instance.display = pressedButton
                 return
             }
+            else if (instance.rightHandValue != nil && instance.currentOperator != nil)
+            {
+                let result: CGFloat = getResult(leftHand: myStoCGFloat(val: tmpLeftHand), operatorString: pressedButton, rightHand: myStoCGFloat(val: tmpRightHand))
+                instance.rightHandValue = nil
+                instance.display = String(describing: result)
+                instance.leftHandValue = String(describing: result)
+                instance.currentOperator = nil
+            }
             else
             {
                 tmpRightHand += pressedButton
@@ -198,9 +206,30 @@ func initButtonValues(instance: ButtonData, pressedButton: String) -> Void {
                 return
             }
         }
+    } else if (buttonIsOperator(value: pressedButton)) {
+//        if (instance.leftHandValue != nil)
+//        {
+//            //
+//
+//        }
+        instance.currentOperator = pressedButton
     }
     
+    
+    
+    
 }
+
+
+
+
+func getResult(leftHand: CGFloat, operatorString: String, rightHand: CGFloat) -> CGFloat {
+//    let leftHandString = String(describing: leftHand)
+//    let rightHandString = String(describing: rightHand)
+    let operatorCGFloat = myStoCGFloat(val: operatorString)
+    return 69;
+}
+
 
 
 //                                if (buttonIsNumber(value: cgFloatButtonValue)) {
