@@ -7,8 +7,10 @@ struct ContentViewEx01: View
     let columns = 4
     let spacing: CGFloat = 15
     
-    @State private var result = "0"
+    @State private var display = "0"
     @State private var scaleFactor: CGFloat = 1.0
+    @State private var currentOperator: String? // means can be nil
+    @State var operationArray: [String]
     
     var body: some View
     {
@@ -18,7 +20,7 @@ struct ContentViewEx01: View
                 Spacer()
                 HStack
                 {
-                    Text(result)
+                    Text(display)
                         .font(Font.system(size: proxy.size.width/CGFloat(columns)).weight(.thin)) // Set the font size to 30 points
                         .minimumScaleFactor(0.6) // Adjust the minimum scale factor as needed
                         .lineLimit(1) // everything will be dispalyed on 0ne line
@@ -27,7 +29,7 @@ struct ContentViewEx01: View
                         .onAppear
                         {
                             // TODO: here add later, if text is too big, dont change previuse text(only for typing numbers, not calculating and displayin!)
-                            let textSize = result.size(withAttributes: [.font: UIFont.systemFont(ofSize: proxy.size.width / CGFloat(columns))])
+                            let textSize = display.size(withAttributes: [.font: UIFont.systemFont(ofSize: proxy.size.width / CGFloat(columns))])
                             scaleFactor = proxy.size.width / (CGFloat(columns) * textSize.width)
                             
                             if scaleFactor < 0.6 {
@@ -44,23 +46,31 @@ struct ContentViewEx01: View
                         ForEach(0..<Int(columns), id: \.self) { column in
                             roundNumberButton(currentRow: row, currentColumn: column, width: getWidth(proxy: proxy), myAction: {
                                 // action
-//                                print("Row: \(row), Column: \(column)")
                                 
-                                var cgFloatResult: CGFloat = myStoCGFloat(result: result)
-                                var cgFloatButtonValue: CGFloat = myStoCGFloat(result: getValueAt(row: row, column: column))
-                                
-                                if (buttonIsNumber(value: cgFloatButtonValue))
-                                {
+                                let cgFloatResult: CGFloat = myStoCGFloat(result: display)
+                                let stringButtonValue: String = getValueAt(row: row, column: column)
+                                let cgFloatButtonValue: CGFloat = myStoCGFloat(result: stringButtonValue)
+
+                                if (buttonIsNumber(value: cgFloatButtonValue)) {
+                                    if (currentOperator != nil) {
+                                        // we are d
+                                    }
                                     if (cgFloatButtonValue == 0 && cgFloatResult == 0) {
                                         print("i will do nothing lol")
+                                    } else if (cgFloatResult == 0) {
+                                        display = stringButtonValue
+                                        operationArray.removeAll()
+                                        operationArray.append(stringButtonValue)
                                     } else {
-                                        print("ITS A NUMBER")
-                                        result += getValueAt(row: row, column: column)
+                                        display += stringButtonValue
                                     }
-                                }
-                                else
-                                {
-                                    print("ITS NOT A NUMBER")
+                                } else if (stringButtonValue == "AC") {
+                                    display = "0";
+                                    operationArray.removeAll()
+                                } else if (buttonIsOperator(value: stringButtonValue)) {
+                                    currentOperator = stringButtonValue
+                                } else {
+                                    print("not implemented yet")
                                 }
                             })
                         }
@@ -70,8 +80,16 @@ struct ContentViewEx01: View
         }.padding(spacing)// distance between screen edge and buttons
     }
 
+    
+    func buttonIsOperator(value: String) -> Bool {
+        if value == "÷" || value == "×" || value == "−" || value == "+" {
+            return true
+        }
+        return false
+    }
+    
     func buttonIsNumber(value: CGFloat) -> Bool {
-        if (value >= 0 && value <= 9) {
+        if value >= 0 && value <= 9 {
             return true // its a number
         }
         return false // if nil or not a number
