@@ -224,10 +224,15 @@ func initButtonValues(instance: ButtonData, pressedButton: String) -> Void {
 
 
 func getResult(leftHand: CGFloat, operatorString: String, rightHand: CGFloat) -> CGFloat {
-//    let leftHandString = String(describing: leftHand)
-//    let rightHandString = String(describing: rightHand)
-    let operatorCGFloat = myStoCGFloat(val: operatorString)
-    return 69;
+    if (operatorString == "÷") {
+        return leftHand / rightHand
+    } else if (operatorString == "×") {
+        return leftHand * rightHand
+    } else if (operatorString == "−") {
+        return leftHand - rightHand
+    } else {
+        return leftHand + rightHand
+    }
 }
 
 
