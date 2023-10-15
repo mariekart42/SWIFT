@@ -7,6 +7,9 @@ struct ContentViewEx01: View
     let columns = 4
     let spacing: CGFloat = 15
     
+    @State private var text = "999.999.9999"
+    @State private var scaleFactor: CGFloat = 1.0
+    
     var body: some View
     {
         GeometryReader { proxy in
@@ -15,14 +18,25 @@ struct ContentViewEx01: View
                 Spacer()
                 HStack
                 {
-                    Spacer()
-                    Text("999")
-                        .font(Font.system(size: proxy.size.width/CGFloat(columns))) // Set the font size to 30 points
-                        .fontWeight(.thin)
-                        .minimumScaleFactor(0.5) // Adjust the minimum scale factor as needed
-                        .lineLimit(1) // Limit the text to a single line
+                    Text(text)
+                        .font(Font.system(size: proxy.size.width/CGFloat(columns)).weight(.thin)) // Set the font size to 30 points
+                        .minimumScaleFactor(0.6) // Adjust the minimum scale factor as needed
+                        .lineLimit(1) // everything will be dispalyed on 0ne line
                         .frame(maxWidth: .infinity, alignment: .trailing) // Align the text to the right side
-                        
+                        .multilineTextAlignment(.center) // Align the text to the center if resized
+                        .onAppear
+                        {
+                            // TODO: here add later, if text is too big, dont change previuse text(only for typing numbers, not calculating and displayin!)
+                            let textSize = text.size(withAttributes: [.font: UIFont.systemFont(ofSize: proxy.size.width / CGFloat(columns))])
+                            scaleFactor = proxy.size.width / (CGFloat(columns) * textSize.width)
+                            
+                            if scaleFactor < 0.6 {
+                                print("Text is too big and is getting resized beyond the specified minimumScaleFactor.")
+                            }
+                        }
+
+
+
                 }.padding(spacing) // distance between upper Spacer and buttons
                 ForEach(0..<rows, id: \.self) { row in
                     HStack(spacing: spacing)
@@ -51,8 +65,6 @@ struct roundNumberButton: View
 {
     var currentRow: Int
     var currentColumn: Int
-    var foregroundColor: Color = .white
-    var backgroundColor: Color = .gray
     var width: CGFloat
     
     var myAction: () -> Void
@@ -62,12 +74,12 @@ struct roundNumberButton: View
         Button(action: myAction)
         {
             Text(getTitle(currentRow: currentRow, currentColumn: currentColumn))
-                .font(.title)
-                .fontWeight(.medium)
+                .font(.largeTitle)
+                .fontWeight(.regular)
                 .frame(width: width)
                 .frame(height: width)
-                .foregroundColor(foregroundColor)
-                .background(backgroundColor)
+                .foregroundColor(getForegroundColor(currentRow: currentRow, currentColumn: currentColumn))// here
+                .background(getBackgroundColor(currentRow: currentRow, currentColumn: currentColumn))// and here
                 .cornerRadius(width/2)
         }
     }
@@ -141,6 +153,24 @@ struct roundNumberButton: View
             }
         default:
             return "lol"
+        }
+    }
+    
+    func getForegroundColor(currentRow: Int, currentColumn: Int) -> Color {
+        if (currentRow == 0 && currentColumn != 3) {
+            return .black
+        } else {
+            return .white
+        }
+    }
+    
+    func getBackgroundColor(currentRow: Int, currentColumn: Int) -> Color {
+        if (currentRow == 0 && currentColumn != 3) {
+            return Color(hex: "#b5b5b5") // light gray
+        } else if (currentColumn == 3) {
+            return Color(hex: "#fc9505") // orange
+        } else {
+            return Color(hex: "#333333") // dark gray
         }
     }
 }
