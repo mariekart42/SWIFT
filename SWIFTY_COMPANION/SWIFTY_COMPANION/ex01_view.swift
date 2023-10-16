@@ -165,8 +165,9 @@ func initButtonValues(instance: ButtonData, pressedButton: String) -> Void {
         if (instance.display == "0" && buttonValueCFFloat == 0)
         {
             instance.display = "0"
+            return
         }
-        else if (instance.currentOperator == nil)
+        else if (instance.currentOperator == nil) // writing to leftHand value
         {
             if (tmpLeftHand == "0")
             {
@@ -182,7 +183,7 @@ func initButtonValues(instance: ButtonData, pressedButton: String) -> Void {
                 return
             }
         }
-        else if (instance.currentOperator != nil)
+        else if (instance.currentOperator != nil) // writing to rightHand value
         {
             if (tmpRightHand == "0")
             {
@@ -192,11 +193,13 @@ func initButtonValues(instance: ButtonData, pressedButton: String) -> Void {
             }
             else if (instance.rightHandValue != nil && instance.currentOperator != nil)
             {
-                let result: CGFloat = getResult(leftHand: myStoCGFloat(val: tmpLeftHand), operatorString: pressedButton, rightHand: myStoCGFloat(val: tmpRightHand))
+                let unwrapedOperator: String = instance.currentOperator ?? "0"
+                let result: CGFloat = getResult(leftHand: myStoCGFloat(val: tmpLeftHand), operatorString: unwrapedOperator, rightHand: myStoCGFloat(val: tmpRightHand))
                 instance.rightHandValue = nil
                 instance.display = String(describing: result)
                 instance.leftHandValue = String(describing: result)
                 instance.currentOperator = nil
+                return
             }
             else
             {
@@ -206,14 +209,22 @@ func initButtonValues(instance: ButtonData, pressedButton: String) -> Void {
                 return
             }
         }
-    } else if (buttonIsOperator(value: pressedButton)) {
-//        if (instance.leftHandValue != nil)
-//        {
-//            //
-//
-//        }
+    }
+    else if (buttonIsOperator(value: pressedButton))
+    {
         instance.currentOperator = pressedButton
     }
+    else if (pressedButton == "=")
+    {
+        let unwrapedOperator: String = instance.currentOperator ?? "0"
+        let result: CGFloat = getResult(leftHand: myStoCGFloat(val: tmpLeftHand), operatorString: unwrapedOperator, rightHand: myStoCGFloat(val: tmpRightHand))
+        instance.rightHandValue = nil
+        instance.display = String(describing: result)
+        instance.leftHandValue = String(describing: result)
+        instance.currentOperator = nil
+        return
+
+}
     
     
     
