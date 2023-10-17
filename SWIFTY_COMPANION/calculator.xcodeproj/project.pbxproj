@@ -7,22 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		591B4F672ADBED0C009CFB7A /* ex01_utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591B4F662ADBED0C009CFB7A /* ex01_utils.swift */; };
-		5999E82A2ADAB1380081FB9A /* ex01_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999E8292ADAB1380081FB9A /* ex01_view.swift */; };
-		5999E8302ADAB1BD0081FB9A /* ex01_main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999E82F2ADAB1BD0081FB9A /* ex01_main.swift */; };
-		599C02AB2AD1BB34007B6DB4 /* ex00_main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C02AA2AD1BB34007B6DB4 /* ex00_main.swift */; };
-		599C02AD2AD1BB34007B6DB4 /* ex00_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C02AC2AD1BB34007B6DB4 /* ex00_view.swift */; };
+		591B4F672ADBED0C009CFB7A /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591B4F662ADBED0C009CFB7A /* utils.swift */; };
+		5999E82A2ADAB1380081FB9A /* calculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999E8292ADAB1380081FB9A /* calculatorView.swift */; };
+		5999E8302ADAB1BD0081FB9A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999E82F2ADAB1BD0081FB9A /* main.swift */; };
 		599C02AF2AD1BB35007B6DB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 599C02AE2AD1BB35007B6DB4 /* Assets.xcassets */; };
 		599C02B22AD1BB35007B6DB4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 599C02B12AD1BB35007B6DB4 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		591B4F662ADBED0C009CFB7A /* ex01_utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ex01_utils.swift; sourceTree = "<group>"; };
-		5999E8292ADAB1380081FB9A /* ex01_view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ex01_view.swift; sourceTree = "<group>"; usesTabs = 1; };
-		5999E82F2ADAB1BD0081FB9A /* ex01_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ex01_main.swift; sourceTree = "<group>"; usesTabs = 1; };
+		591B4F662ADBED0C009CFB7A /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
+		5999E8292ADAB1380081FB9A /* calculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculatorView.swift; sourceTree = "<group>"; usesTabs = 1; };
+		5999E82F2ADAB1BD0081FB9A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; usesTabs = 1; };
 		599C02A72AD1BB34007B6DB4 /* SWIFTY_COMPANION.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SWIFTY_COMPANION.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		599C02AA2AD1BB34007B6DB4 /* ex00_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ex00_main.swift; sourceTree = "<group>"; };
-		599C02AC2AD1BB34007B6DB4 /* ex00_view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ex00_view.swift; sourceTree = "<group>"; usesTabs = 1; };
 		599C02AE2AD1BB35007B6DB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		599C02B12AD1BB35007B6DB4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		599C02B32AD1BB35007B6DB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,7 +38,7 @@
 		599C029E2AD1BB34007B6DB4 = {
 			isa = PBXGroup;
 			children = (
-				599C02A92AD1BB34007B6DB4 /* SWIFTY_COMPANION */,
+				599C02A92AD1BB34007B6DB4 /* calculator */,
 				599C02A82AD1BB34007B6DB4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,19 +51,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		599C02A92AD1BB34007B6DB4 /* SWIFTY_COMPANION */ = {
+		599C02A92AD1BB34007B6DB4 /* calculator */ = {
 			isa = PBXGroup;
 			children = (
-				599C02AA2AD1BB34007B6DB4 /* ex00_main.swift */,
-				599C02AC2AD1BB34007B6DB4 /* ex00_view.swift */,
 				599C02AE2AD1BB35007B6DB4 /* Assets.xcassets */,
 				599C02B32AD1BB35007B6DB4 /* Info.plist */,
 				599C02B02AD1BB35007B6DB4 /* Preview Content */,
-				5999E8292ADAB1380081FB9A /* ex01_view.swift */,
-				5999E82F2ADAB1BD0081FB9A /* ex01_main.swift */,
-				591B4F662ADBED0C009CFB7A /* ex01_utils.swift */,
+				5999E8292ADAB1380081FB9A /* calculatorView.swift */,
+				5999E82F2ADAB1BD0081FB9A /* main.swift */,
+				591B4F662ADBED0C009CFB7A /* utils.swift */,
 			);
-			path = SWIFTY_COMPANION;
+			path = calculator;
 			sourceTree = "<group>";
 		};
 		599C02B02AD1BB35007B6DB4 /* Preview Content */ = {
@@ -112,7 +106,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 599C02A22AD1BB34007B6DB4 /* Build configuration list for PBXProject "SWIFTY_COMPANION" */;
+			buildConfigurationList = 599C02A22AD1BB34007B6DB4 /* Build configuration list for PBXProject "calculator" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -147,11 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				591B4F672ADBED0C009CFB7A /* ex01_utils.swift in Sources */,
-				5999E8302ADAB1BD0081FB9A /* ex01_main.swift in Sources */,
-				599C02AD2AD1BB34007B6DB4 /* ex00_view.swift in Sources */,
-				599C02AB2AD1BB34007B6DB4 /* ex00_main.swift in Sources */,
-				5999E82A2ADAB1380081FB9A /* ex01_view.swift in Sources */,
+				591B4F672ADBED0C009CFB7A /* utils.swift in Sources */,
+				5999E8302ADAB1BD0081FB9A /* main.swift in Sources */,
+				5999E82A2ADAB1380081FB9A /* calculatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +281,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ahhhhh.SWIFTY-COMPANION";
+				PRODUCT_BUNDLE_IDENTIFIER = ahhhhh.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -311,7 +303,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ahhhhh.SWIFTY-COMPANION";
+				PRODUCT_BUNDLE_IDENTIFIER = ahhhhh.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -321,7 +313,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		599C02A22AD1BB34007B6DB4 /* Build configuration list for PBXProject "SWIFTY_COMPANION" */ = {
+		599C02A22AD1BB34007B6DB4 /* Build configuration list for PBXProject "calculator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				599C02B42AD1BB35007B6DB4 /* Debug */,

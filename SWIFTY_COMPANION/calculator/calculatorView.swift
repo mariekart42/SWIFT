@@ -16,7 +16,7 @@ class ButtonData {
 }
 
 
-struct ContentViewEx01: View
+struct ContentView: View
 {
     let rows = 5
     let columns = 4

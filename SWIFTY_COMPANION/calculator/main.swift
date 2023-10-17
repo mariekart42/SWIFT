@@ -1,13 +1,13 @@
 import SwiftUI
 
 @main
-struct ex01: App
+struct calculator: App
 {
     var body: some Scene
     {
         WindowGroup
         {
-            ContentViewEx01()
+            ContentView()
         }
     }
 }

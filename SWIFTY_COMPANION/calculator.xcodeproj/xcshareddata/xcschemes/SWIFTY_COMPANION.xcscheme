@@ -17,7 +17,7 @@
                BlueprintIdentifier = "599C02A62AD1BB34007B6DB4"
                BuildableName = "SWIFTY_COMPANION.app"
                BlueprintName = "SWIFTY_COMPANION"
-               ReferencedContainer = "container:SWIFTY_COMPANION.xcodeproj">
+               ReferencedContainer = "container:calculator.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,7 +47,7 @@
             BlueprintIdentifier = "599C02A62AD1BB34007B6DB4"
             BuildableName = "SWIFTY_COMPANION.app"
             BlueprintName = "SWIFTY_COMPANION"
-            ReferencedContainer = "container:SWIFTY_COMPANION.xcodeproj">
+            ReferencedContainer = "container:calculator.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "599C02A62AD1BB34007B6DB4"
             BuildableName = "SWIFTY_COMPANION.app"
             BlueprintName = "SWIFTY_COMPANION"
-            ReferencedContainer = "container:SWIFTY_COMPANION.xcodeproj">
+            ReferencedContainer = "container:calculator.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
