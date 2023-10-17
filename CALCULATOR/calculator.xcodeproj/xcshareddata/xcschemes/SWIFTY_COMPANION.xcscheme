@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "599C02A62AD1BB34007B6DB4"
-               BuildableName = "SWIFTY_COMPANION.app"
-               BlueprintName = "SWIFTY_COMPANION"
+               BuildableName = "Calculator.app"
+               BlueprintName = "Calculator"
                ReferencedContainer = "container:calculator.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "599C02A62AD1BB34007B6DB4"
-            BuildableName = "SWIFTY_COMPANION.app"
-            BlueprintName = "SWIFTY_COMPANION"
+            BuildableName = "Calculator.app"
+            BlueprintName = "Calculator"
             ReferencedContainer = "container:calculator.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "599C02A62AD1BB34007B6DB4"
-            BuildableName = "SWIFTY_COMPANION.app"
-            BlueprintName = "SWIFTY_COMPANION"
+            BuildableName = "Calculator.app"
+            BlueprintName = "Calculator"
             ReferencedContainer = "container:calculator.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

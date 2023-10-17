@@ -18,7 +18,7 @@
 		591B4F662ADBED0C009CFB7A /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		5999E8292ADAB1380081FB9A /* calculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculatorView.swift; sourceTree = "<group>"; usesTabs = 1; };
 		5999E82F2ADAB1BD0081FB9A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; usesTabs = 1; };
-		599C02A72AD1BB34007B6DB4 /* SWIFTY_COMPANION.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SWIFTY_COMPANION.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		599C02A72AD1BB34007B6DB4 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		599C02AE2AD1BB35007B6DB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		599C02B12AD1BB35007B6DB4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		599C02B32AD1BB35007B6DB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		599C02A82AD1BB34007B6DB4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				599C02A72AD1BB34007B6DB4 /* SWIFTY_COMPANION.app */,
+				599C02A72AD1BB34007B6DB4 /* Calculator.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,9 +75,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		599C02A62AD1BB34007B6DB4 /* SWIFTY_COMPANION */ = {
+		599C02A62AD1BB34007B6DB4 /* Calculator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 599C02B62AD1BB35007B6DB4 /* Build configuration list for PBXNativeTarget "SWIFTY_COMPANION" */;
+			buildConfigurationList = 599C02B62AD1BB35007B6DB4 /* Build configuration list for PBXNativeTarget "Calculator" */;
 			buildPhases = (
 				599C02A32AD1BB34007B6DB4 /* Sources */,
 				599C02A42AD1BB34007B6DB4 /* Frameworks */,
@@ -87,9 +87,9 @@
 			);
 			dependencies = (
 			);
-			name = SWIFTY_COMPANION;
+			name = Calculator;
 			productName = SWIFTY_COMPANION;
-			productReference = 599C02A72AD1BB34007B6DB4 /* SWIFTY_COMPANION.app */;
+			productReference = 599C02A72AD1BB34007B6DB4 /* Calculator.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -119,7 +119,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				599C02A62AD1BB34007B6DB4 /* SWIFTY_COMPANION */,
+				599C02A62AD1BB34007B6DB4 /* Calculator */,
 			);
 		};
 /* End PBXProject section */
@@ -322,7 +322,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		599C02B62AD1BB35007B6DB4 /* Build configuration list for PBXNativeTarget "SWIFTY_COMPANION" */ = {
+		599C02B62AD1BB35007B6DB4 /* Build configuration list for PBXNativeTarget "Calculator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				599C02B72AD1BB35007B6DB4 /* Debug */,
