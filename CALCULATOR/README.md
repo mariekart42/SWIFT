@@ -1,4 +1,5 @@
 # My Calculator in SwiftUI
 
 **Demo:**
-![Demo](./calculatorDemo.gif)
+
+<img src="./calculatorDemo.gif" alt="Alt Text" width="585" height="1266">
