@@ -1,5 +1,5 @@
-# My Calculator in SwiftUI
+# My Calculator in SwiftUI 
 
 **Demo:**
 
-<img src="./calculatorDemo.gif" alt="Alt Text" width="585" height="1266">
+<img src="./calculatorDemo.gif" alt="Demo Calculator" width="354" height="767">
