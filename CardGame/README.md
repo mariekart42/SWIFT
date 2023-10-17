@@ -3,4 +3,5 @@
 - learning how to create Views and simple elements
 
 **Demo:**
-![Demo](./CardGame.gif)
+
+<img src="./CardGame.gif" alt="Demo CardGame" width="354" height="767">
