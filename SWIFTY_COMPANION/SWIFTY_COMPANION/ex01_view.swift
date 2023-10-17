@@ -26,56 +26,81 @@ struct ContentViewEx01: View
     
     var body: some View
     {
-        GeometryReader { proxy in
-            VStack(spacing: spacing)
-            {
-//                print("After initButton: \(ButtonInstance.display)")
-                Spacer()
-                HStack
-                {
-//                    let displayNow: String = realDisplay
-                    Text(realDisplay)
-                        .font(Font.system(size: proxy.size.width/CGFloat(columns)).weight(.thin)) // Set the font size to 30 points
-                        .minimumScaleFactor(0.6) // Adjust the minimum scale factor as needed
-                        .lineLimit(1) // everything will be dispalyed on 0ne line
-                        .frame(maxWidth: .infinity, alignment: .trailing) // Align the text to the right side
-                        .multilineTextAlignment(.center) // Align the text to the center if resized
-                        .onAppear
-                        {
-                            // TODO: here add later, if text is too big, dont change previuse text(only for typing numbers, not calculating and displayin!)
-                            let textSize = ButtonInstance.display.size(withAttributes: [.font: UIFont.systemFont(ofSize: proxy.size.width / CGFloat(columns))])
-                            let scaleFactor: CGFloat = proxy.size.width / (CGFloat(columns) * textSize.width)
-                            
-                            if scaleFactor < 0.6 {
-                                print("Text is too big and is getting resized beyond the specified minimumScaleFactor.")
-                            }
-                        }
-                }.padding(spacing) // distance between upper Spacer and buttons
-                ForEach(0..<rows, id: \.self) { row in
-                    HStack(spacing: spacing)
-                    {
-                        ForEach(0..<Int(columns), id: \.self) { column in
-                            roundNumberButton(currentRow: row, currentColumn: column, width: getWidth(proxy: proxy), myAction: {
-                                ButtonInstance.row = row
-                                ButtonInstance.column = column
-                                initButtonValues(instance: ButtonInstance, pressedButton: getValueAt(row: row, column: column))
-                                realDisplay = ButtonInstance.display
-                            })
-                        }
-                    }
-                }
-            }
-        }.padding(spacing)// distance between screen edge and buttons
+		Color.black // Sets the background color to black
+			.edgesIgnoringSafeArea(.all)
+			.overlay(
+				
+			GeometryReader { proxy in
+				VStack(spacing: spacing)
+				{
+					Text("Marie's Calculator lol")
+						.foregroundColor(Color(hex: "#a3d1ff"))
+					Spacer()
+					HStack
+					{
+						Text(getDispalyText(display: realDisplay))
+							.font(Font.system(size: proxy.size.width/CGFloat(columns)).weight(.thin))
+							.minimumScaleFactor(0.6) // Adjust the minimum scale factor as needed
+							.lineLimit(1) // everything will be dispalyed on 0ne line
+							.frame(maxWidth: .infinity, alignment: .trailing) // Align the text to the right side
+							.multilineTextAlignment(.center) // Align the text to the center if resized
+							.foregroundColor(.white)
+							.onAppear
+						{
+							let textSize = ButtonInstance.display.size(withAttributes: [.font: UIFont.systemFont(ofSize: proxy.size.width / CGFloat(columns))])
+							let scaleFactor: CGFloat = proxy.size.width / (CGFloat(columns) * textSize.width)
+							if scaleFactor < 0.6 {
+								print("Text is too big and is getting resized beyond the specified minimumScaleFactor.")
+							}
+						}
+					}.padding(spacing) // distance between upper Spacer and buttons
+					ForEach(0..<rows, id: \.self) { row in
+						HStack(spacing: spacing)
+						{
+							ForEach(0..<Int(columns), id: \.self) { column in
+								if ((row == 0 || row == 4) && column != 3) {
+									if (column == 0) {
+										longRoundButton(row: row, column: column, width: getWidth(proxy: proxy)*3+(2*spacing), height: getWidth(proxy: proxy), myAction: {
+											ButtonInstance.row = row
+											ButtonInstance.column = column
+											initButtonValues(instance: ButtonInstance, pressedButton: getValueAt(row: row, column: column))
+											realDisplay = ButtonInstance.display
+										})
+									}
+								} else {
+									roundNumberButton(currentRow: row, currentColumn: column, width: getWidth(proxy: proxy), myAction: {
+										ButtonInstance.row = row
+										ButtonInstance.column = column
+										initButtonValues(instance: ButtonInstance, pressedButton: getValueAt(row: row, column: column))
+										realDisplay = ButtonInstance.display
+									})
+								}
+							}
+						}
+					}
+				}
+			}.padding(spacing)// distance between screen edge and buttons
+		)
     }
-    
+		
     
     func getWidth(proxy: GeometryProxy) -> CGFloat {
         let columnsCGFloat: CGFloat = CGFloat(columns)
         return (UIScreen.main.bounds.width - (columnsCGFloat + 1) * spacing) / columnsCGFloat
     }
-// end of struct
-}
 
+    func getDispalyText(display: String) -> String {
+        let displayCGFloat = myStoCGFloat(val: display)
+        
+        if displayCGFloat.truncatingRemainder(dividingBy: 1) == 0 {
+            // The CGFloat has no fractional part and can be converted to Int
+            if let intValue = Int(exactly: displayCGFloat) {
+                return String(describing: intValue)
+            }
+        }
+        return display
+    }
+}
 
 
 func buttonIsNumber(value: CGFloat) -> Bool {
@@ -93,7 +118,28 @@ func buttonIsOperator(value: String) -> Bool {
     return false
 }
 
-
+struct longRoundButton: View {
+    var row: Int
+    var column: Int
+    var width: CGFloat
+    var height: CGFloat
+    var myAction: () -> Void
+    
+    var body: some View
+    {
+        Button(action: myAction)
+        {
+            Text(getValueAt(row: row, column: column))
+                .font(.largeTitle)
+                .fontWeight(.regular)
+                .frame(width: width)
+                .frame(height: height)
+                .foregroundColor(getForegroundColor(currentRow: row, currentColumn: column))
+                .background(getBackgroundColor(currentRow: row, currentColumn: column))// and here
+                .cornerRadius(width/2)
+        }
+    }
+}
 
 
 struct roundNumberButton: View
@@ -113,7 +159,7 @@ struct roundNumberButton: View
                 .fontWeight(.regular)
                 .frame(width: width)
                 .frame(height: width)
-                .foregroundColor(getForegroundColor(currentRow: currentRow, currentColumn: currentColumn))// here
+                .foregroundColor(getForegroundColor(currentRow: currentRow, currentColumn: currentColumn))
                 .background(getBackgroundColor(currentRow: currentRow, currentColumn: currentColumn))// and here
                 .cornerRadius(width/2)
         }
@@ -140,14 +186,7 @@ func getBackgroundColor(currentRow: Int, currentColumn: Int) -> Color {
 }
 
 
-// INIT THESE:
-//    instance.display
-//    instance.leftHandValue
-//    instance.rightHandValue
-//    instance.currentOperator
 func initButtonValues(instance: ButtonData, pressedButton: String) -> Void {
-    print("lol: \(instance.row) | \(instance.column)")
-    
     let buttonValueCFFloat: CGFloat = myStoCGFloat(val: pressedButton)
     
     var tmpLeftHand: String = instance.leftHandValue ?? "0" // if leftHandValue is nil -> assigns it to "0"
@@ -159,63 +198,36 @@ func initButtonValues(instance: ButtonData, pressedButton: String) -> Void {
         instance.leftHandValue = nil
         instance.display = "0"
         return
-    }
-    else if (buttonIsNumber(value: buttonValueCFFloat))
-    {
-        if (instance.display == "0" && buttonValueCFFloat == 0)
-        {
+    } else if (buttonIsNumber(value: buttonValueCFFloat)) {
+        if (instance.display == "0" && buttonValueCFFloat == 0) {
             instance.display = "0"
             return
-        }
-        else if (instance.currentOperator == nil) // writing to leftHand value
-        {
-            if (tmpLeftHand == "0")
-            {
+        } else if (instance.currentOperator == nil) { // writing to leftHand value
+            if (tmpLeftHand == "0") {
                 instance.leftHandValue = pressedButton
                 instance.display = pressedButton
                 return
-            }
-            else
-            {
+            } else {
                 tmpLeftHand += pressedButton
                 instance.leftHandValue = tmpLeftHand
                 instance.display = tmpLeftHand
                 return
             }
-        }
-        else if (instance.currentOperator != nil) // writing to rightHand value
-        {
-            if (tmpRightHand == "0")
-            {
+        } else if (instance.currentOperator != nil) { // writing to rightHand value
+            if (tmpRightHand == "0") {
                 instance.rightHandValue = pressedButton
                 instance.display = pressedButton
                 return
-            }
-            else if (instance.rightHandValue != nil && instance.currentOperator != nil)
-            {
-                let unwrapedOperator: String = instance.currentOperator ?? "0"
-                let result: CGFloat = getResult(leftHand: myStoCGFloat(val: tmpLeftHand), operatorString: unwrapedOperator, rightHand: myStoCGFloat(val: tmpRightHand))
-                instance.rightHandValue = nil
-                instance.display = String(describing: result)
-                instance.leftHandValue = String(describing: result)
-                instance.currentOperator = nil
-                return
-            }
-            else
-            {
+            } else {
                 tmpRightHand += pressedButton
-                instance.leftHandValue = tmpRightHand
+                instance.rightHandValue = tmpRightHand
                 instance.display = tmpRightHand
                 return
             }
         }
-    }
-    else if (buttonIsOperator(value: pressedButton))
-    {
+    } else if (buttonIsOperator(value: pressedButton)) {
         instance.currentOperator = pressedButton
-    }
-    else if (pressedButton == "=")
-    {
+    } else if (pressedButton == "=") {
         let unwrapedOperator: String = instance.currentOperator ?? "0"
         let result: CGFloat = getResult(leftHand: myStoCGFloat(val: tmpLeftHand), operatorString: unwrapedOperator, rightHand: myStoCGFloat(val: tmpRightHand))
         instance.rightHandValue = nil
@@ -223,15 +235,8 @@ func initButtonValues(instance: ButtonData, pressedButton: String) -> Void {
         instance.leftHandValue = String(describing: result)
         instance.currentOperator = nil
         return
-
+    }
 }
-    
-    
-    
-    
-}
-
-
 
 
 func getResult(leftHand: CGFloat, operatorString: String, rightHand: CGFloat) -> CGFloat {
@@ -245,48 +250,3 @@ func getResult(leftHand: CGFloat, operatorString: String, rightHand: CGFloat) ->
         return leftHand + rightHand
     }
 }
-
-
-
-//                                if (buttonIsNumber(value: cgFloatButtonValue)) {
-//                                    if (currentOperator != nil) {
-//                                        // we are d
-//                                    }
-//                                    if (cgFloatButtonValue == 0 && cgFloatResult == 0) {
-//                                        print("i will do nothing lol")
-//                                    } else if (cgFloatResult == 0) {
-//                                        display = stringButtonValue
-//                                        operationArray.removeAll()
-//                                        operationArray.append(stringButtonValue)
-//                                    } else {
-//                                        display += stringButtonValue
-//                                    }
-//                                } else if (stringButtonValue == "AC") {
-//                                    display = "0";
-//                                    operationArray.removeAll()
-//                                } else if (buttonIsOperator(value: stringButtonValue)) {
-//                                    currentOperator = stringButtonValue
-//                                } else {
-//                                    print("not implemented yet")
-//                                }
-
-
-//                                let displayValueCGFloat: CGFloat = myStoCGFloat(result: ButtonInstance.display)
-//                                let buttonValueString: String = getValueAt(row: row, column: column)
-//                                let buttonValueCFFloat: CGFloat = myStoCGFloat(result: buttonValueString)
-//
-//                                if (buttonValueString == "AC") {
-//                                    display = "0"
-//                                    ButtonInstance.leftHandValue = nil
-//                                    ButtonInstance.rightHandValue = nil
-//                                    ButtonInstance.currentOperator = nil
-//                                } else if (buttonIsNumber(value: buttonValueCFFloat)) {
-//                                    display = getDisplayValue()
-//                                    if (currentOperator == nil) {
-//                                        ButtonInstance.rightHandValue = getRightHandValue()
-//                                    } else {
-//                                        leftHandValue = getLeftHandValue()
-//                                    }
-//                                    if (currentOperator == nil) {
-//                                        if (displayValueCGFloat == 0 && buttonValueCFFloat == 0) {
-//                                            display = "0"
